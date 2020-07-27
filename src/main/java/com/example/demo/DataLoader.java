@@ -23,15 +23,15 @@ import java.util.Set;
             //Define a user
             User user1 = new User();
             user1.setName("Sue");
-            user1.setTask("Curates leadership roles");
+            user1.setTask("Curates top talent for leadership roles");
 
             User user2 = new User();
             user2.setName("Nora");
-            user2.setTask("Curates coding and programming opportunities");
+            user2.setTask("Curates smart people for coding and programming opportunities");
 
             User user3 = new User();
             user3.setName("Ray");
-            user3.setTask("Matches clients with web designers");
+            user3.setTask("Curates web designers with strong UX skills.");
 
             Job job1 = new Job();
             job1.setTitle("Java Developer");
