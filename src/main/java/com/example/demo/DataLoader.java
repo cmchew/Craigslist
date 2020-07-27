@@ -43,7 +43,7 @@ import java.util.Set;
 
             Job job2= new Job();
             job2.setTitle("Technical Writer");
-            job2.setDescription("Prepare pseudocode for team of remote java programmers for new job application.");
+            job2.setDescription("Prepare pseudocode for team of remote java programmers for new job application");
             job2.setPostedDate("July 27");
             job2.setPhone("301-555-5555");
             job2.setAuthor("Sue");
