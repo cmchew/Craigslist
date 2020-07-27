@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Job List</title>
+    <div th:replace="base :: headerfg"></div>
+</head>
+<style>
+    .main {
+        padding: 20px;
+    }
+</style>
+<body>
+<div th:replace="base :: navlinksfg"></div>
+
+<div class="main">
+    <h3>List of Job Opportunities</h3>
+    <br>
+<div th:each=" job: ${jobs}">
+    <h4 th:inline="text">[[${job.title}]]</h4>
+    <p th:inline="text">[[${job.postedDate}]]<br>
+    <p th:inline="text">[[${job.description}]]</p>
+<!--    <br>-->
+<!--    <a th:href="@{/update/{id}(id=${job.id})}">Update</a>-->
+<!--    <a th:href="@{/detail/{id}(id=${job.id})}">Detail</a>-->
+<!--    <a th:href="@{/delete/{id}(id=${job.id})}">Delete</a>-->
+</div>
+
+</div>
+<div th:replace="base ::footerfg"></div>
+</body>
+</html>

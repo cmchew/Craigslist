@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SueJobs</title>
+    <div th:replace="base :: headerfg"></div>
+</head>
+<style>
+    .main {
+        padding: 20px;
+    }
+    .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+</style>
+<body>
+<div th:replace="base :: navlinksfg"></div>
+
+
+<div class = "main">
+
+    <h3>Ray's Jobs</h3>
+
+<div th:each="user : ${users}">
+
+    <h2 th:text="${user.name}"></h2>
+    <h6 th:inline="text">[[${user.task}]]</h6>
+    <br>
+
+    <div>
+        <button class="button"><a th:href="@{/updateUser/{id} (id = ${user.id})}">Update</a></button>
+        <button class="button"><a th:href="@{/detailUser/{id} (id = ${user.id})}">Detail</a></button>
+        <button class="button"><a th:href="@{/deleteUser/{id} (id = ${user.id})}">Delete</a></button>
+    </div>
+    <br>
+    <ul>
+        <th:block th:each="job : ${user.jobs}">
+            <li th:inline="text"><b>[[${job.title}]]</b> post date
+                [[${job.postedDate}]].</li>
+            <br>
+            <button class="button"><a th:href="@{/updateJob/{id} (id = ${job.id})}">Update</a></button>
+            <button class="button"><a th:href="@{/detailJob/{id} (id = ${job.id})}">Detail</a></button>
+            <button class="button"><a th:href="@{/deleteJob/{id} (id = ${job.id})}">Delete</a></button>
+        </th:block>
+    </ul>
+    <br>
+
+
+
+    <p><a th:href="addJob">Add a Job</a></p>
+    <p><a th:href="addUser">Add a user</a></p>
+</div>
+
+<div th:replace="base ::footerfg"></div>
+
+</div>
+</body>
+</html>
